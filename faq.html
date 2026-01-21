@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQ – Donner votre sang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:"Inter",system-ui,sans-serif;
+      background:#ffffff;
+      color:#111111;
+    }
+    .page{
+      padding:40px 60px 80px;
+    }
+    .top-bar{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:60px;
+    }
+    .brand{
+      font-family:"Anton",sans-serif;
+      font-size:26px;
+      letter-spacing:1px;
+    }
+    .nav-links a{
+      margin-left:24px;
+      text-decoration:none;
+      color:#111111;
+      font-size:14px;
+      position:relative;
+    }
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-3px;
+      width:0;
+      height:1px;
+      background:#111111;
+      transition:0.2s;
+    }
+    .nav-links a:hover::after{width:100%;}
+
+    h1{
+      font-family:"Anton",sans-serif;
+      font-size:60px;
+      margin-bottom:40px;
+    }
+
+    .faq-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:60px 80px;
+    }
+    .faq-item h2{
+      font-family:"Anton",sans-serif;
+      font-size:20px;
+      margin-bottom:18px;
+    }
+    .faq-item p{
+      font-size:14px;
+      line-height:1.7;
+      margin-bottom:8px;
+    }
+    .faq-item strong{
+      font-weight:700;
+    }
+
+    @media(max-width:1000px){
+      .faq-grid{grid-template-columns:repeat(2,minmax(0,1fr));}
+      .page{padding:30px 24px 60px;}
+    }
+    @media(max-width:700px){
+      .faq-grid{grid-template-columns:1fr;}
+      h1{font-size:42px;}
+      .top-bar{flex-direction:column;align-items:flex-start;gap:10px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header class="top-bar">
+      <div class="brand">DONNER VOTRE SANG BY LES GÉNIES</div>
+      <nav class="nav-links">
+        <a href="index.html">Accueil</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+    </header>
+
+    <main id="faq">
+      <h1>FAQ</h1>
+
+      <section class="faq-grid">
+        <!-- 1 -->
+        <article class="faq-item">
+          <h2>1. Qui peut donner son sang&nbsp;?</h2>
+          <p>Peut donner son sang toute personne :</p>
+          <p>âgée de <strong>18 à 70 ans</strong>,</p>
+          <p>pesant <strong>au moins 50 kg</strong>,</p>
+          <p>en <strong>bonne santé générale</strong>.</p>
+          <p>Avant le don, un <strong>questionnaire médical</strong> et un <strong>entretien confidentiel</strong> avec un médecin vérifient que le don est possible.</p>
+        </article>
+
+        <!-- 2 -->
+        <article class="faq-item">
+          <h2>2. Est‑ce que donner son sang fait mal&nbsp;?</h2>
+          <p>Le don de sang <strong>ne fait généralement pas mal</strong>.</p>
+          <p>La piqûre provoque une <strong>légère sensation de pincement</strong> qui dure quelques secondes seulement.</p>
+          <p>Pendant le prélèvement, le donneur est <strong>allongé ou assis confortablement</strong> et surveillé par le personnel médical.</p>
+        </article>
+
+        <!-- 3 -->
+        <article class="faq-item">
+          <h2>3. Combien de temps dure un don de sang&nbsp;?</h2>
+          <p>Un don de sang dure environ <strong>45 minutes au total</strong>.</p>
+          <p>Environ <strong>10 minutes</strong> pour le prélèvement lui‑même.</p>
+          <p>Le reste du temps pour l’accueil, le questionnaire, l’entretien médical et la <strong>collation</strong> après le don.</p>
+          <p>C’est donc un geste <strong>rapide</strong>, facile à intégrer dans la journée.</p>
+        </article>
+
+        <!-- 4 -->
+        <article class="faq-item">
+          <h2>4. À quoi sert le sang collecté&nbsp;?</h2>
+          <p>Le sang donné est <strong>indispensable</strong> pour :</p>
+          <p>les <strong>urgences</strong> (accidents, hémorragies),</p>
+          <p>les <strong>opérations chirurgicales</strong>,</p>
+          <p>les traitements de <strong>maladies graves</strong> (cancers, anémies, maladies du sang),</p>
+          <p>les <strong>transfusions régulières</strong> de certains patients.</p>
+          <p>Un seul don peut aider <strong>jusqu’à 3 personnes</strong>.</p>
+        </article>
+
+        <!-- 5 -->
+        <article class="faq-item">
+          <h2>5. Y a‑t‑il des risques pour le donneur&nbsp;?</h2>
+          <p>Le don de sang est <strong>très sécurisé</strong>.</p>
+          <p>Les effets possibles sont rares et légers&nbsp;: petite fatigue, étourdissement passager, bleu au point de piqûre.</p>
+          <p>Le matériel est <strong>stérile et à usage unique</strong>, donc aucun risque d’infection.</p>
+          <p>Le corps reconstitue le sang prélevé en quelques jours.</p>
+        </article>
+
+        <!-- 6 -->
+        <article class="faq-item">
+          <h2>6. À quelle fréquence peut‑on donner son sang&nbsp;?</h2>
+          <p>La fréquence est réglementée pour protéger la santé du donneur.</p>
+          <p><strong>Hommes</strong> : jusqu’à <strong>6 dons par an</strong>.</p>
+          <p><strong>Femmes</strong> : jusqu’à <strong>4 dons par an</strong>.</p>
+          <p>Un délai minimum de <strong>8 semaines</strong> est requis entre deux dons.</p>
+        </article>
+      </section>
+    </main>
+  </div>
+</body>
+</html>

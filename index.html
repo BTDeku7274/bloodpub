@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Donner votre sang</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#f7c38e;
+      --orange:#ff6b1a;
+      --dark:#111111;
+    }
+    *{box-sizing:border-box;margin:0;padding:0;}
+    body{
+      font-family:"Inter",system-ui,sans-serif;
+      background:var(--bg);
+      color:var(--dark);
+    }
+
+    /* NAV + HERO */
+    .top-nav{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:20px 60px;
+      font-size:14px;
+    }
+    .logo{
+      font-family:"Anton",sans-serif;
+      letter-spacing:1px;
+    }
+    .nav-links a{
+      margin-left:24px;
+      text-decoration:none;
+      color:var(--dark);
+      position:relative;
+    }
+    .nav-links a::after{
+      content:"";
+      position:absolute;
+      left:0;
+      bottom:-3px;
+      width:0;
+      height:1px;
+      background:var(--dark);
+      transition:0.2s;
+    }
+    .nav-links a:hover::after{width:100%;}
+
+    .hero{
+      padding-bottom:40px;
+    }
+    .hero-content{
+      position:relative;
+      padding:40px 60px 0;
+    }
+    .hero-content h1{
+      font-family:"Anton",sans-serif;
+      font-size:160px;
+      color:var(--orange);
+      line-height:0.9;
+    }
+    .hero-card{
+      position:relative;
+      margin-top:-40px;
+      margin-left:80px;
+      background:#d8d8d8;
+      padding:30px;
+      max-width:800px;
+    }
+    .hero-card p{
+      font-size:26px;
+      color:white;
+    }
+    .video-placeholder{
+      margin-top:40px;
+      width:560px;
+      height:315px;
+      background:#b5b5b5;
+    }
+
+    /* SECTIONS GÉNÉRALES */
+    .section{
+      padding:80px 60px;
+    }
+    .section h2{
+      font-family:"Anton",sans-serif;
+      font-size:52px;
+    }
+    .section p, .section li{
+      font-size:16px;
+      line-height:1.6;
+    }
+
+    /* POURQUOI DONNER */
+    .why{
+      display:flex;
+      gap:40px;
+      align-items:center;
+    }
+    .why-left img{
+      max-width:420px;
+      width:100%;
+      display:block;
+    }
+    .why-right ul{
+      margin-top:20px;
+      list-style:disc;
+      margin-left:20px;
+    }
+
+    /* PROCESS */
+    .process{
+      display:flex;
+      gap:40px;
+      align-items:flex-start;
+    }
+    .process-text{
+      background:white;
+      padding:40px;
+      border-radius:18px 18px 0 0;
+      max-width:620px;
+    }
+    .process-text h3{
+      text-align:center;
+      margin-bottom:20px;
+      color:#f47b2a;
+    }
+    .process-card{
+      background:#e0e5f0;
+      padding:30px 40px;
+      max-width:520px;
+    }
+    .process-card h4{
+      font-family:"Anton",sans-serif;
+      color:var(--orange);
+      font-size:32px;
+      margin:10px 0 20px;
+    }
+    .process-card ol{
+      margin-left:18px;
+    }
+
+    /* STATS */
+    .stats{
+      display:flex;
+      gap:40px;
+      align-items:flex-start;
+    }
+    .stats-left img{
+      max-width:520px;
+      width:100%;
+      display:block;
+    }
+    .stats-right ul{
+      margin-left:20px;
+      list-style:disc;
+    }
+    .btn{
+      display:inline-block;
+      margin-top:28px;
+      padding:18px 40px;
+      background:var(--orange);
+      color:white;
+      border-radius:50px;
+      text-decoration:none;
+      border:none;
+      cursor:pointer;
+      font-weight:700;
+    }
+
+    /* SOCIAL */
+    .social{
+      text-align:center;
+    }
+    .social-grid{
+      margin:40px auto 20px;
+      display:flex;
+      justify-content:center;
+      gap:40px;
+    }
+    .social-grid img{
+      width:260px;
+      height:260px;
+      object-fit:cover;
+      display:block;
+    }
+
+    /* CONTACT */
+    .contact{
+      display:flex;
+      gap:60px;
+    }
+    .contact-left{
+      max-width:420px;
+    }
+    .contact-left h2{
+      font-family:"Anton",sans-serif;
+      font-size:60px;
+      margin-bottom:20px;
+    }
+    .contact-right form{
+      max-width:700px;
+    }
+    .row{
+      display:flex;
+      gap:20px;
+    }
+    .field{
+      display:flex;
+      flex-direction:column;
+      margin-bottom:18px;
+    }
+    .field label{
+      font-size:14px;
+    }
+    .field span{
+      font-size:11px;
+    }
+    input,textarea{
+      margin-top:6px;
+      padding:10px 12px;
+      border-radius:20px;
+      border:1px solid #d0a57b;
+      background:none;
+    }
+
+    /* FOOTER */
+    .footer{
+      display:flex;
+      justify-content:space-between;
+      padding:40px 60px 30px;
+      border-top:1px solid rgba(0,0,0,0.1);
+    }
+    .footer-col h3{
+      font-family:"Anton",sans-serif;
+      font-size:32px;
+    }
+    .footer-col p{
+      margin-top:6px;
+    }
+
+    /* RESPONSIVE */
+    @media(max-width:900px){
+      .hero-content h1{font-size:96px;}
+      .hero-card{margin-left:0;}
+      .why,.process,.stats,.contact{flex-direction:column;}
+      .social-grid{flex-direction:column;}
+      .top-nav{flex-direction:column;align-items:flex-start;}
+      .section{padding:60px 30px;}
+      .top-nav{padding:20px 30px;}
+    }
+  </style>
+</head>
+<body>
+  <header class="hero" id="accueil">
+    <nav class="top-nav">
+      <span class="logo">DONNER VOTRE SANG BY LES GÉNIES</span>
+      <div class="nav-links">
+        <a href="#accueil">Accueil</a>
+        <a href="faq.html">FAQ</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+
+    <div class="hero-content">
+      <h1>DONNEZ</h1>
+      <div class="hero-card">
+        <p>Chaque année, les dons du sang sauvent plus de <strong>500 000</strong> Français.</p>
+        <div class="video-placeholder"><iframe width="560" height="315" src="https://www.youtube.com/embed/JzSMJBhi9bo?si=Ak619Zdw2rfQV0KM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Pourquoi donner -->
+    <section class="section why">
+      <div class="why-left">
+        <!-- Remplace src par ton image -->
+        <img src="https://images.squarespace-cdn.com/content/v1/6971472dcf0c8f361e4fb80b/3449ad29-414a-424e-ac1f-72ca261c9edc/image_no_bg.png?format=500w" alt="Don de sang">
+      </div>
+      <div class="why-right">
+        <h2>MAIS ALORS POURQUOI DONNER SON SANG&nbsp;?</h2>
+        <ul>
+          <li>Sauve des vies : un seul don peut aider jusqu’à <strong>3 personnes</strong>.</li>
+          <li>Geste simple et rapide : environ <strong>45 minutes</strong> au total.</li>
+          <li>Utile à tous : les hôpitaux en ont besoin <strong>tous les jours</strong>.</li>
+          <li>Bon pour le donneur : suivi de santé (tension, hémoglobine).</li>
+          <li>Acte solidaire et citoyen : tu aides concrètement, sans compétence particulière.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Comment ça se passe -->
+    <section class="section process">
+      <div class="process-text">
+        <h3>Comment faire&nbsp;?</h3>
+        <p>Tu arrives au centre de don.</p>
+        <p>D’abord, tu remplis un <strong>questionnaire médical</strong>.</p>
+        <p>Ensuite, tu as un <strong>entretien rapide</strong> avec un médecin.</p>
+        <p>Le don dure environ <strong>10 minutes</strong> : on prélève <strong>450 ml de sang</strong>.</p>
+        <p>Après, tu te reposes et tu prends une <strong>collation</strong> pendant 15 à 20 minutes.</p>
+        <p>En tout, ça prend environ <strong>45 minutes</strong>, et ton don pourra aider jusqu’à <strong>3 personnes</strong>.</p>
+      </div>
+      <div class="process-card">
+        <p class="card-title">Que faut-il&nbsp;?</p>
+        <h4>AVOIR ENTRE 18 ET 70 ANS</h4>
+        <ol>
+          <li>Peser au moins 50 kg.</li>
+          <li>Être en bonne santé.</li>
+          <li>Ne pas être à jeune.</li>
+          <li>Avoir un mode de vie compatible avec le don (questionnaire + entretien médical).</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Partie statistiques -->
+    <section class="section stats" id="faq">
+      <div class="stats-left">
+        <!-- Remplace src par ton infographie -->
+        <img src="https://images.squarespace-cdn.com/content/v1/6971472dcf0c8f361e4fb80b/258683c3-527a-4422-876f-8e642c586359/image_2026-01-21_225205234.png?format=2500w" alt="Statistiques don du sang">
+      </div>
+      <div class="stats-right">
+        <h2>LA PARTIE STATISTIQUE</h2>
+        <p>En 2023, la France a eu environ <strong>1 571 605 donneurs</strong> et <strong>2 678 054 dons</strong>.</p>
+        <p>Chaque jour, il faut environ <strong>10 000 dons de sang</strong> pour répondre aux besoins des hôpitaux.</p>
+        <p>Les donneurs représentent environ <strong>3,5&nbsp;% de la population</strong> en âge de donner.</p>
+        <p>Parmi les dons :</p>
+        <ul>
+          <li>2 219 254 pour le sang total,</li>
+          <li>382 956 pour le plasma,</li>
+          <li>79 300 pour les plaquettes.</li>
+        </ul>
+        <p>La tranche d’âge la plus représentée est <strong>18–29 ans</strong>.</p>
+        <a class="btn" href="https://dondesang.efs.sante.fr" target="_blank">EN SAVOIR PLUS</a>
+      </div>
+    </section>
+
+    <!-- Réseaux sociaux -->
+    <section class="section social">
+      <h2>SUIVEZ-NOUS SUR LES RÉSEAUX SOCIAUX</h2>
+      <div class="social-grid">
+	<a href="https://www.instagram.com/bt_deku7274/" target="_blank">
+        	<img  href="https://www.instagram.com/bt_deku7274/" src="https://images.squarespace-cdn.com/content/v1/6971472dcf0c8f361e4fb80b/c44c997c-d631-46a8-8ce2-eb3a9e3f3815/image_2026-01-21_225327789.png?format=2500w" alt="Profil 1">
+	</a>
+	<a href="https://www.instagram.com/leon.dclb/" target="_blank">
+        <img src="https://images.squarespace-cdn.com/content/v1/6971472dcf0c8f361e4fb80b/76a3ad45-0489-4fb5-bfa6-14e209636eca/image_2026-01-21_225413909.png?format=2500w" alt="Profil 2">
+	</a>
+	<a href="https://www.instagram.com/manuv_83/" target="_blank">
+        <img src="https://images.squarespace-cdn.com/content/v1/6971472dcf0c8f361e4fb80b/b59d1f3a-e3ae-4ffc-a617-7f4df684f4ba/image_2026-01-21_225450539.png?format=2500w" alt="Profil 3">
+	</a>
+      </div>
+      <a class="btn" href="#" target="_blank">RÉSEAUX SOCIAUX</a>
+    </section>
+
+    <!-- Contact -->
+    <section class="section contact" id="contact">
+      <div class="contact-left">
+        <h2>CONTACTEZ-NOUS</h2>
+        <p>Vous avez envie de travailler avec nous&nbsp;? Remplissez le formulaire et nous vous contacterons rapidement.</p>
+      </div>
+      <div class="contact-right">
+        <form>
+          <div class="row">
+            <div class="field">
+              <label>Prénom <span>(obligatoire)</span></label>
+              <input type="text" required>
+            </div>
+            <div class="field">
+              <label>Nom de famille <span>(obligatoire)</span></label>
+              <input type="text" required>
+            </div>
+          </div>
+          <div class="field">
+            <label>E-mail <span>(obligatoire)</span></label>
+            <input type="email" required>
+          </div>
+          <div class="field">
+            <label>Message <span>(obligatoire)</span></label>
+            <textarea rows="4" required></textarea>
+          </div>
+          <button type="submit" class="btn">ENVOYER</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-col">
+      <h3>DON DE SANG</h3>
+    </div>
+    <div class="footer-col">
+      <h3>LOCALISATION</h3>
+      <p>P.A.C.A</p>
+    </div>
+    <div class="footer-col">
+      <h3>CONTACT</h3>
+      <p>06 51 69 30 27</p>
+    </div>
+  </footer>
+</body>
+</html>
